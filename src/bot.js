@@ -32,9 +32,6 @@ client.on("message", (message) => {
       if (cmdName === "help") help(message);
       if (cmdName === "key") key(user, message);
     }
-  } else {
-    message.channel.send("Access denied");
-    console.log("Access denied");
   }
 });
 
