@@ -122,6 +122,18 @@ const sendKey = async (user, id, message) => {
       }
     });
 
+    res = await axios({
+      method: "PUT",
+      url: `${process.env.ENTRDAIO_UPDATE_KEY}/${validKey.key}`,
+      headers: {
+        "content-type": "application/json",
+        authorization: process.env.ENTRDAIO_AUTH
+      },
+      data: {
+        discordID: id
+      }
+    });
+
     // send key to user
     client.users.cache
       .get(id)
